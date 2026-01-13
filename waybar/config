@@ -1,0 +1,100 @@
+{
+    "layer": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+
+
+
+
+    
+    "modules-left": [
+        "custom/power",
+        "hyprland/workspaces",
+        "hyprland/mode"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "group/network-battery",
+        "group/time"
+    ],
+
+
+
+
+
+    "custom/power": {
+        "format" : "⏻",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/menus/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown now",
+            "reboot": "reboot"
+        }
+    },
+
+
+
+
+
+    "hyprland/window": {
+        "max-length": 50
+    },
+
+
+
+
+
+    "group/time" : {
+        "orientation": "horizontal",
+        "modules": [
+            "clock",
+            "custom/screenshot"
+        ]
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "custom/screenshot": {
+        "format": "󰄀",
+        "tooltip": "Screenshot (copy to clipboard)",
+        "on-click": "grim -g \"$(slurp)\" - | wl-copy",
+        "on-click-right": "grim - | wl-copy"
+    },
+
+    "group/network-battery": {
+        "orientation": "horizontal",
+        "modules": [
+            "network",
+            "battery"
+        ]
+    },
+    "network": {
+        "interface": "wlan0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "full": 100,
+            "very-high": 90,
+            "high": 75,
+            "medium": 50,
+            "low": 25,
+            "critical": 10,
+            "empty": 0
+        }
+    }
+}

@@ -1,0 +1,21 @@
+; WOFI CONFIG FILE
+
+show=drun
+
+width=40%
+height=50%
+location=center
+prompt=Search...
+
+allow_markup=true
+insensitive=true
+allow_images=true
+image_size=24
+gtk_dark=true
+
+; DEFAULTS
+orientation=vertical
+halign=fill
+content_halign=fill
+no_actions=false
+filter_rate=100

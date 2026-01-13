@@ -1,0 +1,28 @@
+#window {
+  border-radius: 10px;
+  border: 2px solid #555;
+}
+
+#outer-box {
+margin: 5px;
+/* border: 2px solid green; */
+} 
+
+#input {
+  margin: 4px 2px 2px;
+  background-color: transparent;
+  border: none;
+}
+#input:focus {
+  box-shadow: none;
+}
+
+#scroll {
+margin: 5px;
+/* border: 2px solid orange; */
+}
+
+#inner-box {
+margin: 5px;
+/* border: 2px solid yellow; */
+}
