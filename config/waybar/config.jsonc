@@ -1,5 +1,5 @@
 {
-    "layer": "bot",
+    "layer": "top",
     "spacing": 0,
     "height": 0,
     "margin-bottom": 0,
@@ -10,11 +10,7 @@
 
 
 
-    "modules-left": [
-        "custom/power",
-        "custom/screenshot",
-        "hyprland/workspaces"
-    ],
+    "modules-left": [],
     "modules-center": [
         "custom/applauncher"
     ],
@@ -25,6 +21,8 @@
         "tray",
         "clock"
     ],
+
+
     
     "custom/power": {
         "format": "󰐥",
@@ -33,7 +31,8 @@
         "menu-file": "~/.config/waybar/menus/power_menu.xml",
         "menu-actions": {
             "shutdown": "shutdown now",
-            "reboot": "reboot"
+            "reboot": "reboot",
+            "logout": "~/.local/bin/waybar-logout.sh"
         }
     },
     "custom/screenshot": {
@@ -42,10 +41,23 @@
         "on-click": "grim -g \"$(slurp)\" - | wl-copy",
         "on-click-right": "grim - | wl-copy"
     },
-    "hyprland/workspaces": {
+    "hyprland/workspaces": {    // hyprland
         "disable-scroll": true,
         "all-outputs": false,
         "tooltip": false
+    },
+    "niri/workspaces": {        // niri
+        "disable-scroll": true,
+        "all-outputs": false,
+        "tooltip": false
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "",
+        "format-connected": " {num_connections}",
+        // "tooltip-format": "{controller_alias}\t{controller_address}",
+        // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        // "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
     },
     
     
@@ -58,34 +70,11 @@
     
     
     
-    "tray": {
-        "spacing": 10,
-        "tooltip": false
-    },
-    "clock": {
-        "format": "󰅐 {:%H:%M}",
-        "tooltip": false
-    },
     "network": {
         "format-wifi": " {bandwidthDownBits}",
         "format-ethernet": " {bandwidthDownBits}",
         "format-disconnected": "󰤮 No Network",
         "interval": 5,
-        "tooltip": false
-    },
-    "pulseaudio": {
-        "scroll-step": 5,
-        "max-volume": 150,
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-icons": [
-            "",
-            "",
-            " "
-        ],
-        "nospacing": 1,
-        "format-muted": " ",
-        "on-click": "pavucontrol",
         "tooltip": false
     },
     "battery": {
@@ -103,5 +92,28 @@
             "󱊢",
             "󱊣"
         ]
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-icons": [
+            "",
+            "",
+            " "
+        ],
+        "nospacing": 1,
+        "format-muted": " ",
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "tray": {
+        "spacing": 10,
+        "tooltip": false
+    },
+    "clock": {
+        "format": "󰅐 {:%H:%M}",
+        "tooltip": false
     }
 }

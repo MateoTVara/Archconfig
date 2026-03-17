@@ -14,5 +14,13 @@
                 <property name="label">Reboot</property>
             </object>
         </child>
+        <child>
+            <object class="GtkSeparatorMenuItem" id="delimiter2" />
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="logout">
+                <property name="label">Log Out</property>
+            </object>
+        </child>
     </object>
 </interface>
