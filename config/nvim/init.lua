@@ -9,5 +9,3 @@ vim.o.expandtab = true
 vim.o.number = true
 
 require("config.lazy")
-
-

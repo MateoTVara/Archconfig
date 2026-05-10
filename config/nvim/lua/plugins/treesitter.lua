@@ -7,6 +7,7 @@ return {
       ensure_installed = {
         "lua", "python", "php",
         "javascript", "typescript", "html", "css",
+        "jsx", "tsx",
         "rust", "java"
       },
       highlight = {

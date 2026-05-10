@@ -5,8 +5,26 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", -- optional, but recommended
+      "nvim-tree/nvim-web-devicons",
     },
-    lazy = false, -- neo-tree will lazily load itself
+    lazy = false, -- loads on startup
+    config = function()
+      require("neo-tree").setup({
+        -- Close the tree when you open a file (optional)
+        event_handlers = {
+          {
+            event = "file_open_requested",
+            handler = function()
+              require("neo-tree.command").execute({ action = "close" })
+            end,
+          },
+        },
+      })
+
+      -- KEYMAP: Toggle Neo-tree with <leader>e
+      vim.keymap.set("n", "<leader>e", function()
+        require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
+      end, { desc = "Toggle Neo-tree" })
+    end,
   }
 }

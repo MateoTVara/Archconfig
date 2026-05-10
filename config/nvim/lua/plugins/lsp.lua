@@ -13,7 +13,8 @@ return {
     opts = {
       ensure_installed = {
         "pyright",
-        "ts_ls",          -- ✅ fixed
+        "ts_ls", 
+        "tailwindcss",
         "rust_analyzer",
         "lua_ls",
         "intelephense",
