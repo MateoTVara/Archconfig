@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$PROJECT_ROOT"
 
 TMP_DIR="tmp"
@@ -15,6 +15,6 @@ git log > "$TMP_DIR/commits.log"
 echo "Generating directory structure to $TMP_DIR/tree.log..."
 echo "$(basename "$PROJECT_ROOT")" > "$TMP_DIR/tree.log"
 tree -a --dirsfirst -I '.git' \
-  | sed '1d' >> "$TMP_DIR/tree.log"
+    | sed '1d' >> "$TMP_DIR/tree.log"
 
 echo "All information has been saved to $PROJECT_ROOT/$TMP_DIR."

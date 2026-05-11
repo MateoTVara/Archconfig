@@ -27,8 +27,9 @@ layer-rule {
 spawn-at-startup "/home/marun/.local/bin/waybar-launcher.sh"
 // spawn-at-startup "hyprpaper"
 spawn-at-startup "awww-daemon" "-n" "wallpaper"
-spawn-at-startup "awww" "img" "-n" "wallpaper" "/home/marun/Dotfiles/wallpapers/Ranni.jpg"
-spawn-at-startup "qbittorrent" 
+// spawn-at-startup "awww" "img" "-n" "wallpaper" "/home/marun/Dotfiles/home/Pictures/wallpapers/Ranni_HP.jpg"
+spawn-at-startup "awww" "img" "-n" "wallpaper" "/home/marun/Dotfiles/home/Pictures/wallpapers/Ranni.jpg"
+spawn-at-startup "qbittorrent"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -76,6 +77,6 @@ environment {
 
     GDK_SCALE "1"
     GDK_DPI_SCALE "0.9"
-    
+
     GTK_THEME "Adwaita:dark"
 }
