@@ -2,27 +2,48 @@
 
 set -euo pipefail
 
-DOTFILES_DIR="$HOME/Dotfiles/config"
+DOTFILES_DIR="$HOME/Dotfiles/home/dot/config"
 TARGET_DIR="$HOME/.config"
 
 mkdir -p "$TARGET_DIR"
 
-for dir in "$DOTFILES_DIR"/*; do
-  name=$(basename "$dir")
-  target="$TARGET_DIR/$name"
+link_item() {
+  local source="$1"
+  local target="$2"
 
-  # If symlink already exists, skip
   if [ -L "$target" ]; then
-    echo "Skipping (already symlink): $name"
-    continue
+    echo "Skipping (already symlink): $target"
+    return
   fi
 
-  # If something exists but is not a symlink, warn
   if [ -e "$target" ]; then
     echo "Warning: $target exists and is not a symlink, skipping"
+    return
+  fi
+
+  ln -s "$source" "$target"
+  echo "Linked: $target"
+}
+
+# Handle normal .config directories/files
+for source in "$DOTFILES_DIR"/*; do
+  name=$(basename "$source")
+
+  # Skip systemd, handled separately
+  if [ "$name" = "systemd" ]; then
     continue
   fi
 
-  ln -s "$dir" "$target"
-  echo "Linked: $name"
+  link_item "$source" "$TARGET_DIR/$name"
+done
+
+# Special handling for systemd/user
+mkdir -p "$TARGET_DIR/systemd/user"
+
+for source in "$DOTFILES_DIR/systemd/user"/*; do
+  name=$(basename "$source")
+
+  link_item \
+    "$source" \
+    "$TARGET_DIR/systemd/user/$name"
 done

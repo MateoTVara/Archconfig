@@ -1,0 +1,36 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
+
+# Compinstall save file
+zstyle :compinstall filename "$HOME/.zshrc"
+
+# Starship setup
+eval "$(starship init zsh)"
+
+# fnm setup
+eval "$(fnm env --use-on-cd --shell zsh)"
+
+# Enable LS_COLORS
+eval "$(dircolors -b)"
+
+# Enable colored completion lists
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Word characters for word navigation
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+# Ctrl + Arrow word navigation
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+
+# Overwrite default behaviour with alises
+alias ls='ls --color=auto'

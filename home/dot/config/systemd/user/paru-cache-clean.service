@@ -1,0 +1,6 @@
+[Unit]
+Description=Clean paru cache
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c 'rm -rf "$HOME/.cache/paru/"*'
