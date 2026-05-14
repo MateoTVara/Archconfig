@@ -7,10 +7,10 @@ return {
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons",
     },
-    lazy = false, -- loads on startup
+    lazy = false,
     config = function()
       require("neo-tree").setup({
-        -- Close the tree when you open a file (optional)
+        -- Close Neo-tree when opening a file from the tree
         event_handlers = {
           {
             event = "file_open_requested",

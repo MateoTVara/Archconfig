@@ -27,10 +27,21 @@ eval "$(dircolors -b)"
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Word characters for word navigation
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+# WORDCHARS=${WORDCHARS//\/}
 # Ctrl + Arrow word navigation
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 
 # Overwrite default behaviour with alises
 alias ls='ls --color=auto'
+
+# History substring
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+
+# 
+setopt AUTO_PARAM_SLASH

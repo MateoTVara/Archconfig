@@ -1,6 +1,9 @@
 include "./window-rules/firefox.kdl"
 include "./window-rules/general.kdl"
-// include "./window-rules/qbittorrent.kdl"
+include "./window-rules/qbittorrent.kdl"
+include "./window-rules/vscode.kdl"
+include "./window-rules/zed.kdl"
+include "./window-rules/zoom.kdl"
 
 include "./binds.kdl"
 include "./input.kdl"

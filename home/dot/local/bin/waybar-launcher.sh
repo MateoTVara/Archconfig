@@ -6,7 +6,6 @@ if [ "$XDG_CURRENT_DESKTOP" = "Niri" ]; then
 elif [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
     CONFIG_FILE="$HOME/.config/waybar/config-hyprland.jsonc"
 else
-    # Fallback
     CONFIG_FILE="$HOME/.config/waybar/config.jsonc"
 fi
 

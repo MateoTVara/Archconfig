@@ -27,8 +27,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      -- ✅ NEW API (no require("lspconfig"))
-
+      -- enable servers
       vim.lsp.enable("pyright")
       vim.lsp.enable("ts_ls")
       vim.lsp.enable("rust_analyzer")
