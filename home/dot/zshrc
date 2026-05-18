@@ -45,3 +45,6 @@ bindkey '^[[B' down-line-or-beginning-search
 
 # 
 setopt AUTO_PARAM_SLASH
+
+# Reset cursor to beam (bar) after every command
+precmd() { printf '\e[5 q' }

@@ -8,4 +8,7 @@ vim.o.expandtab = true
 
 vim.o.number = true
 
+-- Allow cursor to cross line boundaries with arrow keys in insert mode
+vim.opt.whichwrap:append("<,>,[,]")
+
 require("config.lazy")
