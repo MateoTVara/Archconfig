@@ -3,5 +3,5 @@
 if pgrep -x waybar > /dev/null; then
     pkill waybar
 else
-    waybar &
+    niri msg action spawn-sh -- "waybar -c $HOME/.config/waybar/config-niri.jsonc"
 fi

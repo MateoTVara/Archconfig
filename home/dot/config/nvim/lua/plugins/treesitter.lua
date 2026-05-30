@@ -8,7 +8,8 @@ return {
         "lua", "python", "php",
         "javascript", "typescript", "html", "css",
         "jsx", "tsx",
-        "rust", "java"
+        "rust", "java",
+        "qmljs"
       },
       highlight = {
         enable = true,

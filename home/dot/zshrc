@@ -31,6 +31,8 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # Ctrl + Arrow word navigation
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
+bindkey '^W' backward-kill-word
+bindkey '^[[3;5~' kill-word
 
 # Overwrite default behaviour with alises
 alias ls='ls --color=auto'
