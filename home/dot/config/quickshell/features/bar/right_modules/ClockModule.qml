@@ -4,6 +4,6 @@ import "../../../components"
 
 ModuleShell {
     StyledText {
-        textContent: `󰅐 ${TimeService.time}`
+        text: `󰅐 ${TimeService.time}`
     }
 }

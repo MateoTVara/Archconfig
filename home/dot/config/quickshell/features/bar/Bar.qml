@@ -10,7 +10,7 @@ Scope {
             required property var modelData
             screen: modelData
 
-            implicitHeight: 35
+            implicitHeight: 36
             color: "transparent"
 
             anchors {
@@ -30,8 +30,9 @@ Scope {
                 color: ColorsService.background
                 border.color: ColorsService.blue_300
                 border.width: 1
-                radius: 12
+                radius: 14
 
+                LeftModules {}
                 RightModules {}
             }
         }
